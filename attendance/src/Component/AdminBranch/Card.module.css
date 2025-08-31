@@ -1,5 +1,5 @@
 .cardWrapper {
-  position: relative;  /* parent for absolute bell */
+  position: relative;
   min-height: 100vh;
   background: linear-gradient(to bottom right, #f3f6fd, #e0ebff);
   padding: 60px 20px 40px;
@@ -7,42 +7,75 @@
 }
 
 /* ===============================
-   📌 Bell Notification Icon
-   =============================== */
-.bellWrapper {
+    📌 Icons Container (Bell and Delete)
+    =============================== */
+.iconsContainer {
   position: absolute;
   top: 20px;
   right: 30px;
-  cursor: pointer;
+  display: flex;
+  gap: 20px;
   z-index: 10;
 }
 
+/* ===============================
+    📌 Bell Notification Icon
+    =============================== */
+.bellWrapper {
+  cursor: pointer;
+  position: relative;
+}
+
 .bellIcon {
-  font-size: 32px;       /* Bigger for visibility */
-  color: #0078d7;        /* Professional Azure Blue */
+  font-size: 32px;
+  color: #0078d7;
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .bellIcon:hover {
   transform: scale(1.2);
-  color: #005a9e;        /* Darker azure on hover */
+  color: #005a9e;
 }
 
 /* ===============================
-   📌 Cards Container
-   =============================== */
+    📌 Delete Icon
+    =============================== */
+.deleteWrapper {
+  cursor: pointer;
+  position: relative;
+}
+
+.deleteIcon {
+  font-size: 32px;
+  color: #dc3545;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.deleteIcon:hover {
+  transform: scale(1.2);
+  color: #a71d2a;
+}
+
+.deleteIconActive {
+  color: #0078d7;
+  transform: scale(1.1);
+}
+
+/* ===============================
+    📌 Cards Container
+    =============================== */
 .cardContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 30px;
-  margin-top: 60px; /* space below bell */
+  margin-top: 60px;
 }
 
 /* ===============================
-   📌 Card Styles
-   =============================== */
+    📌 Base Card Style
+    =============================== */
 .card {
   width: 100%;
   max-width: 600px;
@@ -56,7 +89,7 @@
   padding: 0 30px;
   font-size: 20px;
   font-weight: 600;
-  color: #0078d7; /* Azure Blue */
+  color: #0078d7;
   transition: all 0.3s ease;
   cursor: pointer;
   border-left: 6px solid #0078d7;
@@ -71,8 +104,8 @@
 }
 
 /* ===============================
-   📌 Add Card (Special Styling)
-   =============================== */
+    📌 Add Card (Special Styling)
+    =============================== */
 .addCard {
   border: 2px dashed #0078d7;
   background-color: #ecf6fd;
@@ -89,4 +122,44 @@
 
 .addCard:hover .addIcon {
   transform: scale(1.2);
+}
+
+/* ===============================
+    📌 Delete Mode Specific Styles
+    =============================== */
+.cardSelected {
+  border: 2px solid #28a745;
+  box-shadow: 0 0 15px rgba(40, 167, 69, 0.3);
+}
+
+.deleteSelectContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.checkIcon {
+  color: #28a745;
+  font-size: 24px;
+}
+
+/* ===============================
+    📌 Confirm Deletion Button
+    =============================== */
+.confirmDeleteButton {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.confirmDeleteButton:hover {
+  background-color: #218838;
 }
