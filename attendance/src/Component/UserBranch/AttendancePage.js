@@ -58,8 +58,7 @@ const AttendancePage = () => {
         JSON.stringify({ checkinTime: currentTime })
       );
       setButtonLabel("Checkout");
-      alert("✅ Check-in successful! Redirecting to login page in 5 seconds...");
-      setTimeout(() => navigate("/user-login"), 5000);
+      
     } else if (buttonLabel === "Checkout") {
       const confirmCheckout = window.confirm(
         "Are you sure you want to checkout? Please confirm to complete your attendance."
@@ -72,8 +71,8 @@ const AttendancePage = () => {
         JSON.stringify({ checkinTime, checkoutTime: currentTime })
       );
       setButtonLabel("Checked Out");
-      alert("✅ Checkout successful! Redirecting to login page in 5 seconds...");
-      setTimeout(() => navigate("/user-login"), 5000);
+      
+      
     }
   };
 

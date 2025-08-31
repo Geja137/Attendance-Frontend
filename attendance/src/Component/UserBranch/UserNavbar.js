@@ -1,7 +1,7 @@
 // src/Component/UserBranch/UserNavbar.js
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaHome, FaClipboardList, FaUserCheck, FaPlusCircle, FaUserCircle } from "react-icons/fa"; 
+import { FaHome, FaClipboardList, FaUserCheck, FaPlusCircle, FaUserCircle, FaSignOutAlt } from "react-icons/fa"; 
 import styles from "./UserNavbar.module.css";
 
 const UserNavbar = () => {
@@ -21,15 +21,18 @@ const UserNavbar = () => {
         <Link to="/user/post-attendance" className={styles.navbarLink}>
           <FaPlusCircle className={styles.icon} /> Post Attendance
         </Link>
+        
       </div>
 
-      {/* Right side profile */}
       <div className={styles.navbarRight}>
+        <Link to="/user-login" className={styles.navbarLink}>
+          <FaSignOutAlt className={styles.icon} /> Logout
+        </Link>
         <span className={styles.profileName}>John Doe</span>
-        {/* If no profile picture, use FaUserCircle */}
+        
         <FaUserCircle className={styles.profileIcon} />
-        {/* If you have real profile pic, replace above with:
-        <img className={styles.profileAvatar} src="/path/to/profile.jpg" alt="Profile" /> */}
+
+        
       </div>
     </nav>
   );
