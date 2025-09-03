@@ -114,7 +114,7 @@ const AdminCardView = () => {
       <div className={styles.iconsContainer}>
         <div
           className={styles.bellWrapper}
-          onClick={() => navigate("/claim-requests")}
+          onClick={() =>  navigate("/admin-login/card/claim-requests")}
           title="View Claim Requests"
         >
           <FaBell className={styles.bellIcon} />
