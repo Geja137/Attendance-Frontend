@@ -184,5 +184,3 @@ function AddEmployee() {
 }
 
 export default AddEmployee;
-
-export default AddEmployee;
